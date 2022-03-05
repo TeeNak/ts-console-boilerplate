@@ -13,7 +13,7 @@
             "runtimeArgs": [
                 "run-script", "debug", "--", "-p"
             ],
-            "port": 9229
+            "port": 9229,
         },
         {
             "type": "node",
@@ -24,7 +24,7 @@
             "runtimeArgs": [
                 "run-script", "debug"
             ],
-            "port": 9229
+            "port": 9229,
         }
     ]
 }

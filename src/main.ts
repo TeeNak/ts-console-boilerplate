@@ -1,26 +1,27 @@
-import * as cmdr from "commander";
+import { program } from "commander";
 
 export class Startup {
 	public static main(): number {
 
-		cmdr
+		program
 			.usage("[options] ")
 			.option("-p, --print", "print hello")
 			;
 
 		if (process.argv.slice(2).length <= 0) {
-			cmdr.outputHelp();
+			program.outputHelp();
 			return 0;
 		}
 
-		cmdr.parse(process.argv);
+		program.parse(process.argv);
+		const options = program.opts();
 
-		if (cmdr.print !== undefined) {
-			console.log(" hello: %s", cmdr.print);
+		if (options.print !== undefined) {
+			console.log(" hello: %s", options.print);
 		}
 
 		return 0;
 	}
 }
 
-Startup.main();
+process.exitCode = Startup.main();
